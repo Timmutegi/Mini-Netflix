@@ -1,0 +1,41 @@
+#left {
+    width: 50%;
+    background-color: #9BA7C0;
+    height: 100vh;
+    .main {
+        margin-top: 200px;
+    }
+    .main,
+    .sub {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sub {
+        color: white;
+    }
+}
+
+#right {
+    width: 50%;
+    nav {
+        height: 10vh;
+        ul {
+            list-style-type: none;
+            a {
+                color: black;
+                letter-spacing: 4px;
+                padding: 10px 20px;
+                font-weight: bold;
+            }
+            a:hover {
+                border: 2px solid black;
+                text-decoration: none;
+            }
+            li {
+                float: right;
+                margin-right: 80px;
+            }
+        }
+    }
+}
