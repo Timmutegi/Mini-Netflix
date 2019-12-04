@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  apiUrl = 'http://www.omdbapi.com/?s=batman&apikey=71653937';
 
-  apiUrl: String = ''
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getMovies() {
-    return this.http.get()
+    return this.http.get<any>(this.apiUrl);
   }
 }

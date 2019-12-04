@@ -1,11 +1,30 @@
 <div class="nav">
-    <h1>Netflix</h1>
+    <div class="row">
+        <div class="column" id="column2">
+            <button type="button" class="btn btn-info">Movies</button>
+            <button type="button" class="btn btn-info">Series</button>
+        </div>
+        <div class="column" id="column1">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>
+        </div>
+
+    </div>
 
 </div>
 <div class="movies">
     <div class="row">
-        <div class="column">
-
+        <div *ngFor="let movie of movies" class="column">
+            <div class="card">
+                <img src="{{movie.Poster}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{movie.Title}}</h5>
+                    <!-- <h6 class="card-title">{{movie.Year}}</h6> -->
+                </div>
+            </div>
         </div>
     </div>
 
