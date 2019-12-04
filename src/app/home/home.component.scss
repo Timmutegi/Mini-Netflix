@@ -39,4 +39,28 @@
             }
         }
     }
+    .sign-up {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 200px;
+        input[type="text"],
+        input[type="number"],
+        inputy[type="email"],
+        input[type="password"] {
+            outline: none;
+            box-shadow: none !important;
+        }
+        input {
+            // width: 20em;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            font-size: 13px;
+            border-radius: 0px;
+        }
+        button {
+            border-radius: 0px;
+        }
+    }
 }

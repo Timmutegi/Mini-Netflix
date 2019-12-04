@@ -22,6 +22,9 @@ export class MoviesListComponent implements OnInit {
         // console.log(res);
         this.movies = res.Search;
         console.log(this.movies);
+      },
+      err => {
+        console.log(err);
       }
     );
   }
