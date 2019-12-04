@@ -1,3 +1,5 @@
 <app-home *ngIf="(router.url === '/')"></app-home>
 
-<app-movies-list *ngIf="!(router.url === '/')"></app-movies-list>
+<app-movie-details *ngIf="(router.url === '/movie-details')"></app-movie-details>
+
+<app-movies-list *ngIf="(router.url === '/movies')"></app-movies-list>

@@ -1,1 +1,36 @@
-<p>movie-details works!</p>
+<div class="nav">
+    <div class="row">
+        <div class="column" id="column2">
+            <button type="button" class="btn btn-info" routerLink="/movies">Movies</button>
+            <button type="button" class="btn btn-info">Series</button>
+            <button type="button" class="btn btn-info">Favorites</button>
+
+        </div>
+        <div class="column" id="column1">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="movie-details">
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{{movie.Poster}}" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">Title : {{movie.Title}}</h3>
+                    <p class="card-text">Year : {{movie.Year}}</p>
+                    <p class="card-text">Duration : {{movie.Runtime}}</p>
+                    <p class="card-text">Language : {{movie.Language}}</p>
+                    <p class="card-text">Rated : {{movie.Rated}}</p>
+                    <p class="card-text">Plot : {{movie.Plot}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

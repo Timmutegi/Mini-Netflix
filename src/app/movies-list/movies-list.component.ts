@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies-list',
@@ -8,8 +9,9 @@ import { ApiService } from '../api.service';
 })
 export class MoviesListComponent implements OnInit {
   movies: any;
+  imdbID: string;
 
-  constructor(private data: ApiService) { }
+  constructor(private data: ApiService, private router: Router) { }
 
   ngOnInit() {
     this.getMovie();
@@ -29,4 +31,10 @@ export class MoviesListComponent implements OnInit {
     );
   }
 
+  onClick(ID: string) {
+    this.imdbID = ID;
+    console.log(this.imdbID);
+    localStorage.setItem('ID', this.imdbID);
+    this.router.navigate(['/movie-details']);
+  }
 }

@@ -1,0 +1,54 @@
+.nav {
+    height: 20vh;
+    .row {
+        width: 100%;
+        .column {
+            width: 50%;
+        }
+        #column1 {
+            input[type="text"],
+            textarea {
+                outline: none;
+                box-shadow: none !important;
+            }
+            input {
+                border-radius: 0px;
+                margin: 40px 0px 0px 40px;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                font-size: 13px;
+                width: 20em;
+            }
+            input:hover {
+                border-bottom: 2px solid #9BA7C0;
+            }
+        }
+        #column2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button {
+                margin-right: 20px;
+                border-radius: 0px;
+            }
+        }
+    }
+}
+
+.movie-details {
+    // width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .card {
+        border-radius: 0px;
+        width: 60%;
+        .card-body {
+            font-weight: bold;
+            .card-text {
+                font-size: 13px;
+            }
+        }
+    }
+}
