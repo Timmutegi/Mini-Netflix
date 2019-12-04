@@ -9,9 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { LandingComponent } from './landing/landing.component';
+import { SeriesComponent } from './series/series.component';
 
 const appRoutes: Routes = [
   { path: 'movies', component: MoviesListComponent },
+  { path: 'series', component: SeriesComponent },
   { path: 'movie-details', component: MovieDetailsComponent }
 ];
 
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
     HomeComponent,
     MoviesListComponent,
     MovieDetailsComponent,
-    LandingComponent
+    LandingComponent,
+    SeriesComponent
   ],
   imports: [
     BrowserModule,
