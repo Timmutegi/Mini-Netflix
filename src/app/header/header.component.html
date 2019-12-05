@@ -1,0 +1,18 @@
+<div class="nav">
+    <div class="row">
+        <div class="column" id="column2">
+            <button type="button" class="btn btn-info" routerLink="/movies">Movies</button>
+            <button type="button" class="btn btn-info" routerLink="/series">Series</button>
+            <button type="button" class="btn btn-info">Favorites</button>
+
+        </div>
+        <div class="column" id="column1">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>
+            <button type="button" class="btn btn-info" (click)="logout()">Logout</button>
+        </div>
+    </div>
+</div>

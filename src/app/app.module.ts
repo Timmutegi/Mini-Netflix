@@ -18,6 +18,7 @@ import { LandingComponent } from './landing/landing.component';
 import { SeriesComponent } from './series/series.component';
 import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
+import { HeaderComponent } from './header/header.component';
 
 
 const appRoutes: Routes = [
@@ -48,7 +49,8 @@ export const config = {
     LandingComponent,
     SeriesComponent,
     SignupComponent,
-    EmailComponent
+    EmailComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
