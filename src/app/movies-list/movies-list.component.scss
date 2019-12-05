@@ -6,6 +6,13 @@
             width: 50%;
         }
         #column1 {
+            button {
+                border-radius: 0px;
+                margin-left: 100px;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
             input[type="text"],
             textarea {
                 outline: none;
@@ -13,7 +20,7 @@
             }
             input {
                 border-radius: 0px;
-                margin: 40px 0px 0px 40px;
+                margin: 30px 0px 0px 0px;
                 border-top: none;
                 border-right: none;
                 border-left: none;

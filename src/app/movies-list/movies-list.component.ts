@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -11,7 +12,7 @@ export class MoviesListComponent implements OnInit {
   movies: any;
   imdbID: string;
 
-  constructor(private data: ApiService, private router: Router) { }
+  constructor(private data: ApiService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.getMovie();
@@ -36,5 +37,9 @@ export class MoviesListComponent implements OnInit {
     console.log(this.imdbID);
     localStorage.setItem('ID', this.imdbID);
     this.router.navigate(['/movie-details']);
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

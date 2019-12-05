@@ -4,7 +4,6 @@
             <button type="button" class="btn btn-info" routerLink="/movies">Movies</button>
             <button type="button" class="btn btn-info" routerLink="/series">Series</button>
             <button type="button" class="btn btn-info">Favorites</button>
-
         </div>
         <div class="column" id="column1">
             <form>
@@ -12,6 +11,7 @@
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
             </form>
+            <button type="button" class="btn btn-info" (click)="logout()">Logout</button>
         </div>
     </div>
 </div>
@@ -23,7 +23,6 @@
                     <img src="{{movie.Poster}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{movie.Title}}</h5>
-                        <!-- <h6 class="card-title">{{movie.Year}}</h6> -->
                     </div>
                 </div>
             </a>

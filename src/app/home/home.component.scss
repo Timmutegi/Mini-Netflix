@@ -7,7 +7,8 @@
         letter-spacing: 2px;
     }
     .main,
-    .sub {
+    .sub,
+    .illustration {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -15,55 +16,34 @@
     .sub {
         color: white;
     }
+    img {
+        width: 200px;
+        margin: 0 auto;
+    }
 }
 
 #right {
     width: 50%;
-    nav {
-        height: 10vh;
-        ul {
-            list-style-type: none;
+    .login {
+        .container {
+            margin-top: 250px;
+            .row {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                button {
+                    border-radius: 0px;
+                    width: 20em;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        #sign-up {
+            font-size: 12px;
             a {
                 color: black;
-                letter-spacing: 4px;
-                padding: 10px 20px;
                 font-weight: bold;
             }
-            a:hover {
-                border: 2px solid black;
-                text-decoration: none;
-            }
-            li {
-                float: right;
-                margin-right: 80px;
-            }
-        }
-    }
-    .sign-up {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 200px;
-        input[type="text"],
-        input[type="number"],
-        inputy[type="email"],
-        input[type="password"] {
-            outline: none;
-            box-shadow: none !important;
-        }
-        input {
-            // width: 20em;
-            border-top: none;
-            border-right: none;
-            border-left: none;
-            font-size: 13px;
-            border-radius: 0px;
-        }
-        input:hover {
-            border-bottom: 2px solid #9BA7C0;
-        }
-        button {
-            border-radius: 0px;
         }
     }
 }

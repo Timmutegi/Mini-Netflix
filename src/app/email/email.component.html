@@ -1,0 +1,24 @@
+<div class="email">
+    <div class="card" style="width: 25rem;">
+        <div class="card-body">
+            <h6 class="card-title"><a routerLink="/"><span><i class="fas fa-long-arrow-alt-left"></i></span> Go Back</a>
+            </h6>
+            <h3 class="card-title">Login</h3>
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" #userEmail class="form-control" required autofocus>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" #userPassword class="form-control" required>
+                    </div>
+                </div>
+                {{errorMessage}} {{successMessage}}
+                <button type="submit" class="btn btn-info sm" (click)="login(userEmail.value, userPassword.value)">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</div>
