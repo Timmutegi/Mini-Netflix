@@ -19,6 +19,7 @@ import { SeriesComponent } from './series/series.component';
 import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
 import { HeaderComponent } from './header/header.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 
 const appRoutes: Routes = [
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
   { path: 'series', component: SeriesComponent },
   { path: 'movie-details', component: MovieDetailsComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'login', component: EmailComponent }
+  { path: 'login', component: EmailComponent },
+  { path: 'favorite', component: FavoriteComponent}
 ];
 
 export const config = {
@@ -50,7 +52,8 @@ export const config = {
     SeriesComponent,
     SignupComponent,
     EmailComponent,
-    HeaderComponent
+    HeaderComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
