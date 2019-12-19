@@ -1,1 +1,16 @@
 <app-header></app-header>
+<app-navbar></app-navbar>
+<div class="movies">
+    <div class="row">
+        <div *ngFor="let movie of movies" class="column">
+            <a (click)="onClick(movie.imdbID)" routerLink="#">
+                <div class="card">
+                    <img src="{{movie.Poster}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{movie.Title}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

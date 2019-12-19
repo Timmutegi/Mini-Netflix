@@ -1,0 +1,49 @@
+#left {
+    width: 50%;
+    background-color: #9BA7C0;
+    height: 100vh;
+    .main {
+        margin-top: 200px;
+        letter-spacing: 2px;
+    }
+    .main,
+    .sub,
+    .illustration {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sub {
+        color: white;
+    }
+    img {
+        width: 200px;
+        margin: 0 auto;
+    }
+}
+
+#right {
+    width: 50%;
+    .login {
+        .container {
+            margin-top: 250px;
+            .row {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                button {
+                    border-radius: 0px;
+                    width: 20em;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        #sign-up {
+            font-size: 12px;
+            a {
+                color: black;
+                font-weight: bold;
+            }
+        }
+    }
+}

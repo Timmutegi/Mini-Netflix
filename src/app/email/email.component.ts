@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-email',
@@ -10,10 +11,14 @@ import { Router } from '@angular/router';
 export class EmailComponent implements OnInit {
   errorMessage: string;
   successMessage: string;
+  emailForm: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.emailForm = this.formBuilder.group({
+
+    });
   }
 
   login(email: string, password: string) {

@@ -30,7 +30,7 @@ export class AuthService {
           res => {
             resolve(res);
             console.log(res);
-            this.router.navigate(['/movies']);
+            this.router.navigate(['/home']);
           },
           err => reject(err)
         );
@@ -45,7 +45,7 @@ export class AuthService {
       this.afAuth.auth.signInWithPopup(provider).then(res => {
         resolve(res);
         this.ngZone.run(() => {
-          this.router.navigate(['/movies']);
+          this.router.navigate(['/home']);
         });
       });
     });

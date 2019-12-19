@@ -14,22 +14,18 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { LandingComponent } from './landing/landing.component';
 import { SeriesComponent } from './series/series.component';
 import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
 import { HeaderComponent } from './header/header.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { LoginComponent } from './login/login.component';
+import { SearchComponent } from './search/search.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SearchDetailsComponent } from './search-details/search-details.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
-const appRoutes: Routes = [
-  { path: 'movies', component: MoviesListComponent },
-  { path: 'series', component: SeriesComponent },
-  { path: 'movie-details', component: MovieDetailsComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'login', component: EmailComponent },
-  { path: 'favorite', component: FavoriteComponent}
-];
 
 export const config = {
   apiKey: 'AIzaSyAb6_P1aEuxcp4O0ChwLh18xQuJOLYmWcc',
@@ -48,24 +44,25 @@ export const config = {
     HomeComponent,
     MoviesListComponent,
     MovieDetailsComponent,
-    LandingComponent,
     SeriesComponent,
     SignupComponent,
     EmailComponent,
     HeaderComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    LoginComponent,
+    SearchComponent,
+    SearchDetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    RouterModule.forRoot(
-      appRoutes
-    )
   ],
   providers: [],
   bootstrap: [AppComponent]

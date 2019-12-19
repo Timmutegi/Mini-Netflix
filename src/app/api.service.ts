@@ -15,8 +15,17 @@ export class ApiService {
     return this.http.get<any>(this.apiUrl);
   }
 
-  getSpecificMovie(imdbID) {
-    this.apiURL = `http://www.omdbapi.com/?i=${imdbID}&apiKey=71653937`;
+  getSpecificMovie(imdbID: string) {
+    return this.http.get<any>(`http://www.omdbapi.com/?i=${imdbID}&apiKey=71653937`);
+  }
+
+  getSeries() {
+    this.apiURL = 'http://www.omdbapi.com/?i=tt3514324&apikey=71653937';
     return this.http.get<any>(this.apiURL);
+  }
+
+  search(title: string) {
+    this.apiUrl = `http://www.omdbapi.com/?t=${title}&apikey=71653937`;
+    return this.http.get<any>(this.apiUrl);
   }
 }

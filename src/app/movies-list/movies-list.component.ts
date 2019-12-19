@@ -10,7 +10,6 @@ import { AuthService } from '../auth.service';
 })
 export class MoviesListComponent implements OnInit {
   movies: any;
-  imdbID: string;
 
   constructor(private data: ApiService, private authService: AuthService, private router: Router) { }
 
@@ -32,11 +31,10 @@ export class MoviesListComponent implements OnInit {
     );
   }
 
-  onClick(ID: string) {
-    this.imdbID = ID;
-    console.log(this.imdbID);
-    localStorage.setItem('ID', this.imdbID);
-    this.router.navigate(['/movie-details']);
+  onClick(ID: any) {
+    console.log(ID);
+    const url = `movies/details/${ID}`;
+    this.router.navigate([url]);
   }
 
   logout() {

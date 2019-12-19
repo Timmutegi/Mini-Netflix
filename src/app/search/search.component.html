@@ -1,0 +1,27 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div class="container">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit(search.value)">
+        <div class="form-row">
+            <div class="col-md-3">
+                <input type="text" class="form-control" #search formControlName="search" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-info">Search</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="movies != null" class="movies">
+    <div class="row">
+        <div class="column">
+            <a (click)="onClick(movies.imdbID)" routerLink="#">
+                <div class="card">
+                    <img src="{{movies.Poster}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{movies.Title}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<hr>

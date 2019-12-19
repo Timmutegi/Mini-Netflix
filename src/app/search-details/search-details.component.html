@@ -13,9 +13,7 @@
                     <p class="card-text">Language : {{movie.Language}}</p>
                     <p class="card-text">Rated : {{movie.Rated}}</p>
                     <p class="card-text">Plot : {{movie.Plot}}</p>
-                    <p *ngIf="like === false" class="card-text"><a (click)="likeMovie(movie.imdbID, movie.Title)"><i class="far fa-heart fa-2x"></i></a></p>
-                    <p *ngIf="like === true" class="card-text"><a (click)="dislikeMovie(movie.imdbID)"><i class="fas fa-heart fa-2x"></i></a></p>
-                    <button type="button" class="btn btn-info" routerLink="/movies">BACK</button>
+                    <button type="button" class="btn btn-info" routerLink="/search">BACK</button>
                 </div>
             </div>
         </div>

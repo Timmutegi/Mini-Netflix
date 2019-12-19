@@ -1,5 +1,23 @@
+.container {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    input {
+        border: none;
+        border-bottom: 2px solid black;
+        border-radius: 0px;
+        font-size: 13px;
+    }
+    input.focus,
+    input:focus {
+        -webkit-box-shadow: none!important;
+        box-shadow: none!important;
+    }
+    button {
+        border-radius: 0px;
+    }
+}
+
 .movies {
-    background: #e8ecef;
     .row {
         margin: 0px 30px;
         .column {

@@ -1,49 +1,5 @@
-.nav {
-    height: 20vh;
-    .row {
-        width: 100%;
-        .column {
-            width: 50%;
-        }
-        #column1 {
-            button {
-                border-radius: 0px;
-                margin-left: 100px;
-            }
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            input[type="text"],
-            textarea {
-                outline: none;
-                box-shadow: none !important;
-            }
-            input {
-                border-radius: 0px;
-                margin: 30px 0px 0px 0px;
-                border-top: none;
-                border-right: none;
-                border-left: none;
-                font-size: 13px;
-                width: 20em;
-            }
-            input:hover {
-                border-bottom: 2px solid #9BA7C0;
-            }
-        }
-        #column2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            button {
-                margin-right: 20px;
-                border-radius: 0px;
-            }
-        }
-    }
-}
-
 .movies {
+    background: #e8ecef;
     .row {
         margin: 0px 30px;
         .column {

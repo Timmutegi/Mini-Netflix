@@ -1,1 +1,16 @@
 <app-header></app-header>
+<app-navbar></app-navbar>
+<div class="series">
+    <div class="row">
+        <div class="column">
+            <a (click)="onClick(series.imdbID)" routerLink="#">
+                <div class="card">
+                    <img src="{{series.Poster}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{series.Title}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

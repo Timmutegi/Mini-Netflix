@@ -1,0 +1,29 @@
+.series {
+    background: #e8ecef;
+    .row {
+        margin: 0px 30px;
+        .column {
+            width: 200px;
+            height: 300px;
+            margin-left: 10px;
+            margin-bottom: 100px;
+            a {
+                color: black;
+            }
+            .card {
+                img {
+                    width: 199px;
+                    height: 250px;
+                    border-radius: 0px;
+                }
+                h5 {
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+                .card-body {
+                    height: 60px;
+                }
+            }
+        }
+    }
+}
