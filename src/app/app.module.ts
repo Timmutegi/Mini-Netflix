@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -24,19 +23,8 @@ import { SearchComponent } from './search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchDetailsComponent } from './search-details/search-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { environment } from '../environments/environment';
 
-
-
-export const config = {
-  apiKey: 'AIzaSyAb6_P1aEuxcp4O0ChwLh18xQuJOLYmWcc',
-  authDomain: 'truflix-57712.firebaseapp.com',
-  databaseURL: 'https://truflix-57712.firebaseio.com',
-  projectId: 'truflix-57712',
-  storageBucket: 'truflix-57712.appspot.com',
-  messagingSenderId: '770283727976',
-  appId: '1:770283727976:web:fa0a0bbca8713ab0681fdd',
-  measurementId: 'G-QQ5DDQ61TB'
-};
 
 @NgModule({
   declarations: [
@@ -59,7 +47,7 @@ export const config = {
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(config),
+    AngularFireModule.initializeApp(environment.config),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
