@@ -50,7 +50,7 @@ export class FavoriteComponent implements OnInit {
   }
 
   onClick(ID: string) {
-    const url = `movies/details/${ID}`;
+    const url = `favorites/details/${ID}`;
     this.router.navigate([url]);
   }
 }

@@ -9,18 +9,19 @@ import { SearchDetailsComponent } from './search-details/search-details.componen
 import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
-  { path: 'movies', component: MoviesListComponent },
-  { path: 'search', component: SearchComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'series', component: SeriesComponent },
-  { path: ':type/details/:ID', component: MovieDetailsComponent },
-  { path: 'search-details', component: SearchDetailsComponent },
+  { path: 'movies', component: MoviesListComponent, canActivate: [AuthGuard] },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'series', component: SeriesComponent, canActivate: [AuthGuard] },
+  { path: ':type/details/:ID', component: MovieDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'search-details', component: SearchDetailsComponent, canActivate: [AuthGuard] },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: EmailComponent },
-  { path: 'favorite', component: FavoriteComponent }
+  { path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard] }
 ];
 
 

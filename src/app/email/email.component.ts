@@ -22,15 +22,6 @@ export class EmailComponent implements OnInit {
   }
 
   login(email: string, password: string) {
-    this.authService.login(email, password)
-    .then(res => {
-      console.log(res);
-      this.errorMessage = 'None';
-      this.successMessage = 'Your account has been created';
-    }, err => {
-      console.log(err);
-      this.errorMessage = err.message;
-      this.successMessage = '';
-    });
+    this.authService.signIn(email, password);
   }
 }

@@ -51,8 +51,8 @@ export class MovieDetailsComponent implements OnInit {
       this.movie = res;
       this.firebaseService.getFavoriteMovieID(this.movieID)
       .subscribe(response => {
-          console.log(res);
-          if (response._document != null) {
+        // console.log(response);
+        if (response.exists === true) {
           this.like = true;
         }
         }, err => {

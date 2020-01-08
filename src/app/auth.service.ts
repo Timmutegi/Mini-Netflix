@@ -10,18 +10,26 @@ import * as firebase from 'firebase/app';
 export class AuthService {
   user: User;
 
-  constructor(public afAuth: AngularFireAuth, public router: Router, private ngZone: NgZone) {
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.user = user;
-        localStorage.setItem('user', JSON.stringify(this.user));
-      } else {
-        localStorage.setItem('user', null);
-      }
+  constructor(public afAuth: AngularFireAuth, public router: Router, private ngZone: NgZone) { }
+
+  signIn(email: string, password: string) {
+   return new Promise<any>((resolve, reject) => {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(
+          res => {
+            resolve(res);
+            console.log(res);
+            localStorage.setItem('user', 'ok');
+            this.router.navigate(['/home']);
+          },
+          err => reject(err)
+        );
     });
   }
 
-  login(email: string, password: string) {
+  signUp(email: string, password: string) {
     return new Promise<any>((resolve, reject) => {
       firebase
         .auth()
@@ -30,6 +38,7 @@ export class AuthService {
           res => {
             resolve(res);
             console.log(res);
+            localStorage.setItem('user', 'ok');
             this.router.navigate(['/home']);
           },
           err => reject(err)
@@ -51,29 +60,18 @@ export class AuthService {
     });
   }
 
-  facebookLogin() {
-    return new Promise<any>((resolve, reject) => {
-      const provider = new firebase.auth.FacebookAuthProvider();
-      this.afAuth.auth.signInWithPopup(provider).then(
-        res => {
-          resolve(res);
-        },
-        err => {
-          console.log(err);
-          reject(err);
-        }
-      );
-    });
-  }
-
   async logout() {
     await this.afAuth.auth.signOut();
     localStorage.removeItem('user');
     this.router.navigate(['/']);
   }
 
-  get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return user !== null;
+  public isAuthenticated() {
+    if (localStorage.getItem('user') == null) {
+      return false;
+    } else {
+      return true;
+    }
   }
+
 }

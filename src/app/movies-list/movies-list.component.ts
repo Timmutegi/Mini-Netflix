@@ -32,7 +32,7 @@ export class MoviesListComponent implements OnInit {
   }
 
   onClick(ID: any) {
-    console.log(ID);
+    // console.log(ID);
     const url = `movies/details/${ID}`;
     this.router.navigate([url]);
   }

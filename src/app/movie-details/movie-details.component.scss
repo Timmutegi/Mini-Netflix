@@ -1,7 +1,7 @@
 .movie-details {
     // width: 80%;
     background: #e8ecef;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,5 +23,11 @@
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .movie-details {
+        padding-top: 30px;
     }
 }

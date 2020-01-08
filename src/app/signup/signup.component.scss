@@ -29,6 +29,10 @@
          outline: none;
          box-shadow: none !important;
      }
+     .invalid-feedback {
+         margin-left: 10px;
+         font-size: 11px;
+     }
      input {
          width: 20em;
          border-top: none;

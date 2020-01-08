@@ -1,60 +1,69 @@
-nav {
-    height: 10vh;
-    background: #4F646F;
-    // margin-bottom: 10px;
-    .nav-links {
-        display: flex;
-        width: 50%;
-        list-style: none;
-        height: 100%;
-        justify-content: space-around;
-        align-items: center;
-        // margin-left: auto;
-        button {
-            background: #4F646F;
-            border: none;
-            font-weight: bold;
-        }
-        .btn-secondary.focus,
-        .btn-secondary:focus {
-            -webkit-box-shadow: none!important;
-            box-shadow: none!important;
-        }
-        .dropdown-menu {
-            font-size: 13px;
-        }
-        li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-        }
+.Navbar {
+    background-color: #4F646F;
+    display: flex;
+    padding: 16px;
+    min-height: 10vh;
+    font-family: sans-serif;
+    color: white;
+    a {
+        color: white;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: none;
+        color: black;
+    }
+    .active-link {
+        // text-decoration: underline;
+        color: black !important;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .line {
-        width: 30px;
-        height: 3px;
-        background: white;
-        margin: 5px;
+.Navbar-brand {
+    font-size: 25px;
+}
+
+.Navbar-Link {
+    padding-right: 20px;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.Navbar-Items {
+    display: flex;
+}
+
+.Navbar-Items--right {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.Navbar-Link-toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .Navbar-Items,
+    .Navbar {
+        flex-direction: column;
+        width: 100%;
     }
-    nav {
-        position: relative;
+    .Navbar-Items {
+        display: none;
     }
-    .hamburger {
+    .Navbar-Items--right {
+        margin-left: 0;
+    }
+    .Navbar-ToggleShow {
+        display: flex;
+        // height: 30vh;
+        background-color: #4F646F;
+        // width: 100%;
+    }
+    .Navbar-Link-toggle {
+        align-self: flex-end;
+        display: initial;
         position: absolute;
         cursor: pointer;
-        right: 5%;
-        top: 50%;
-        transform: translate(-5%, -50%);
-    }
-    .nav-links {
-        position: fixed;
-        background: #4F646F;
-        flex-direction: column;
-        display: none;
-        height: 20vh;
-        width: 100%;
     }
 }

@@ -1,23 +1,24 @@
-<nav>
-    <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+<div class="Navbar">
+    <div class="Navbar-Link Navbar-Link-toggle">
+        <i (click)="clickMenu()" class="fas fa-bars"></i>
     </div>
-    <ul class="nav-links">
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/favorite">Favorites</a></li>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categories
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="/home">Popular</a>
-                <a class="dropdown-item" href="#">Top Rated</a>
-                <a class="dropdown-item" routerLink="/movies">Movies</a>
-                <a class="dropdown-item" routerLink="/series">Series</a>
-            </div>
+    <nav class="Navbar-Items">
+        <div class="Navbar-Link">
+            <a class="brand" routerLink="/movies" routerLinkActive="active-link">Movies</a>
         </div>
-        <li><a routerLink="/search">Search</a></li>
-    </ul>
-</nav>
+        <div class="Navbar-Link">
+            <a class="brand" routerLink="/series" routerLinkActive="active-link">Series</a>
+        </div>
+        <div class="Navbar-Link">
+            <a class="brand" routerLink="/favorite" routerLinkActive="active-link">Favorites</a>
+        </div>
+        <div class="Navbar-Link">
+            <a class="brand" routerLink="/search" routerLinkActive="active-link">Search</a>
+        </div>
+    </nav>
+    <nav class="Navbar-Items Navbar-Items--right">
+        <div class="Navbar-Link">
+            <a class="brand" (click)="logout()">Logout</a>
+        </div>
+    </nav>
+</div>
