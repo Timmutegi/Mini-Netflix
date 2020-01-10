@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { FirebaseService } from '../firebase.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 
 
 @Component({
@@ -14,11 +15,13 @@ export class MovieDetailsComponent implements OnInit {
   liked: [];
   like = false;
   movieID: any;
+  favorites: object[];
 
   constructor(
     private data: ApiService,
     private firebaseService: FirebaseService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private db: AngularFirestore
   ) {}
 
   ngOnInit() {
@@ -30,11 +33,11 @@ export class MovieDetailsComponent implements OnInit {
     this.displayMovie();
   }
 
-  likeMovie(ID: any, name: string) {
+  likeMovie(imdbID: any, name: string) {
     this.like = !this.like;
-    this.firebaseService.createFavoriteMovie(ID, name).then(res => {
-      console.log(res);
-    });
+    const uid = localStorage.getItem('uid');
+    console.log(uid);
+    this.firebaseService.createFavoriteMovie(imdbID, name, uid );
   }
 
   dislikeMovie(ID: any) {
@@ -49,14 +52,25 @@ export class MovieDetailsComponent implements OnInit {
     this.data.getSpecificMovie(this.movieID).subscribe(res => {
       // console.log(res);
       this.movie = res;
-      this.firebaseService.getFavoriteMovieID(this.movieID)
-      .subscribe(response => {
-        // console.log(response);
-        if (response.exists === true) {
-          this.like = true;
-        }
-        }, err => {
-          this.like = false;
+      const uid = localStorage.getItem('uid');
+      // const ID = this.firebaseService.getFavoriteMovieID(this.movieID);
+
+      this.db.collection('favorites').get().subscribe(
+        response => {
+          response.forEach(doc => {
+            // this.favorites.push(doc.data().uid);
+            if (this.movieID === doc.id) {
+              if (uid === doc.data().uid) {
+                this.like = true;
+              } else {
+                this.like = false;
+              }
+              this.like = true;
+            } else {
+              this.like = false;
+            }
+
+          });
         }
       );
     });

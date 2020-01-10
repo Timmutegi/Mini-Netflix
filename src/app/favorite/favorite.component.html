@@ -1,5 +1,16 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
+<div *ngIf="favoriteMovies === false" class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="display-5">You Have No Favorite Movies</h3>
+            <p style="font-size:100px">😞</p>
+
+
+        </div>
+    </div>
+    <!-- <h3 class="display-5">You have no Favorite Movies</h3> -->
+</div>
 <div class="movies">
     <div class="row">
         <div *ngFor="let movie of movies" class="column">

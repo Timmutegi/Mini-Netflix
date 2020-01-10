@@ -7,8 +7,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class FirebaseService {
   constructor(private db: AngularFirestore) {}
 
-  createFavoriteMovie(value, name) {
-    return this.db.collection('favorites').doc(value).set({name});
+  createFavoriteMovie(imdbID, name, uid) {
+    return this.db.collection('favorites').doc(imdbID).set({name, uid});
   }
 
   getFavoriteMovieID(value) {
@@ -17,9 +17,5 @@ export class FirebaseService {
 
   delete(ID) {
     return this.db.collection('favorites').doc(ID).delete();
-  }
-
-  getLiked() {
-    return this.db.collection('favorites').snapshotChanges();
   }
 }
