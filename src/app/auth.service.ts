@@ -12,6 +12,16 @@ export class AuthService {
 
   constructor(public afAuth: AngularFireAuth, public router: Router, private ngZone: NgZone) { }
 
+  userID() {
+    this.afAuth.authState.subscribe(
+      user => {
+      if (user) {
+        console.log(user.uid);
+        localStorage.setItem('uid', user.uid);
+      }
+    });
+  }
+
   signIn(email: string, password: string) {
    return new Promise<any>((resolve, reject) => {
       firebase
@@ -41,7 +51,9 @@ export class AuthService {
             localStorage.setItem('user', 'ok');
             this.router.navigate(['/home']);
           },
-          err => reject(err)
+          err => {
+            reject(err);
+          }
         );
     });
   }
@@ -53,6 +65,7 @@ export class AuthService {
       provider.addScope('email');
       this.afAuth.auth.signInWithPopup(provider).then(res => {
         resolve(res);
+        localStorage.setItem('user', 'ok');
         this.ngZone.run(() => {
           this.router.navigate(['/home']);
         });
@@ -63,6 +76,7 @@ export class AuthService {
   async logout() {
     await this.afAuth.auth.signOut();
     localStorage.removeItem('user');
+    localStorage.removeItem('uid');
     this.router.navigate(['/']);
   }
 
@@ -73,5 +87,4 @@ export class AuthService {
       return true;
     }
   }
-
 }

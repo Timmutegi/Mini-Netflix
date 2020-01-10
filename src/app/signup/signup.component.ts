@@ -22,7 +22,7 @@ export class SignupComponent implements OnInit {
       //  lastname: [''],
       //  phonenumber: [''],
        email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,5}$')]],
-       password: ['', [Validators.required, Validators.min(6)]]
+       password: ['', [Validators.required, Validators.minLength(6)]]
      });
   }
 
@@ -41,6 +41,7 @@ export class SignupComponent implements OnInit {
     this.password = this.signupForm.get('password').value;
 
     this.authService.signUp(this.email, this.password);
+    this.authService.userID();
   }
 
 }

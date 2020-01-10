@@ -31,6 +31,6 @@ export class SearchComponent implements OnInit {
 
   onClick(ID: string) {
     localStorage.setItem('searchID', ID);
-    this.router.navigate(['/search-details']);
+    this.router.navigate(['search/search-details']);
   }
 }

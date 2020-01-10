@@ -23,5 +23,6 @@ export class EmailComponent implements OnInit {
 
   login(email: string, password: string) {
     this.authService.signIn(email, password);
+    this.authService.userID();
   }
 }

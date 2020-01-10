@@ -1,10 +1,10 @@
 <div class="sign-up">
-    <div class="card" style="width: 25rem;">
+    <div class="card" style="width: 20rem;">
         <div class="card-body">
             <h6 class="card-title"><a routerLink="/"><span><i class="fas fa-long-arrow-alt-left"></i></span> Go Back</a></h6>
-            <h3 class="card-title">Sign Up</h3>
+            <h3 class="card-title mb-4">Sign Up</h3>
             <form [formGroup]="signupForm">
-                <div class="form-row mb-3">
+                <div class="form-row mb-4">
                     <div class="form-group">
                         <input type="email" placeholder="Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors}" class="form-control">
                         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -13,7 +13,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-row mb-3">
+                <div class="form-row mb-4">
                     <div class="form-group">
                         <input type="password" placeholder="Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors}" class="form-control">
                         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">

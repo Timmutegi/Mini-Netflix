@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'series', component: SeriesComponent, canActivate: [AuthGuard] },
   { path: ':type/details/:ID', component: MovieDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'search-details', component: SearchDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'search/search-details', component: SearchDetailsComponent, canActivate: [AuthGuard] },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: EmailComponent },
   { path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard] }

@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   getMovie() {
-      this.apiService.getMovies().subscribe(
+      this.apiService.getHomeMovies().subscribe(
       res => {
         console.log(res);
         this.movies = res.Search;

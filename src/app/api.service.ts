@@ -5,14 +5,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  apiUrl = 'http://www.omdbapi.com/?s=batman&apikey=71653937';
-
   apiURL: string;
 
   constructor(private http: HttpClient) {}
 
+  getHomeMovies() {
+    return this.http.get<any>('http://www.omdbapi.com/?s=avengers&apikey=71653937');
+  }
+
   getMovies() {
-    return this.http.get<any>(this.apiUrl);
+     return this.http.get<any>('http://www.omdbapi.com/?s=x-men&apikey=71653937');
   }
 
   getSpecificMovie(imdbID: string) {
@@ -25,7 +27,6 @@ export class ApiService {
   }
 
   search(title: string) {
-    this.apiUrl = `http://www.omdbapi.com/?t=${title}&apikey=71653937`;
-    return this.http.get<any>(this.apiUrl);
+    return this.http.get<any>(`http://www.omdbapi.com/?t=${title}&apikey=71653937`);
   }
 }

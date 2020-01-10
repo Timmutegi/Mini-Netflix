@@ -8,9 +8,7 @@ export class FirebaseService {
   constructor(private db: AngularFirestore) {}
 
   createFavoriteMovie(value, name) {
-    return this.db.collection('favorites').doc(value).set({
-      name
-    });
+    return this.db.collection('favorites').doc(value).set({name});
   }
 
   getFavoriteMovieID(value) {
