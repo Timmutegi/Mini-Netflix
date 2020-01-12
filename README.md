@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Truflix
+
+This is an angular project that is similar to a mini Netflix.
+
+## Functionalities
+1. A user is able to view a list of movies on the homepage.
+2. A user can click on a movie and view more details about the movie like when it was Released, the Runtime, Director, Actors, Plot.
+3. A user can like or dislike a movie.
+4. A user can view their favorite movies on the favorites page.
+5. A user can be able to sign up using their email and password or their Google account.
