@@ -29,7 +29,6 @@ export class MovieDetailsComponent implements OnInit {
       params => {
         this.movieID = params.ID;
       });
-    console.log(this.movieID);
     this.displayMovie();
   }
 
@@ -43,33 +42,22 @@ export class MovieDetailsComponent implements OnInit {
   dislikeMovie(ID: any) {
     this.like = !this.like;
     this.firebaseService.delete(ID).then(res => {
-      console.log(res);
     });
   }
 
   displayMovie() {
-    // console.log(this.movieID);
     this.data.getSpecificMovie(this.movieID).subscribe(res => {
-      // console.log(res);
       this.movie = res;
       const uid = localStorage.getItem('uid');
-      // const ID = this.firebaseService.getFavoriteMovieID(this.movieID);
 
       this.db.collection('favorites').get().subscribe(
         response => {
           response.forEach(doc => {
-            // this.favorites.push(doc.data().uid);
-            if (this.movieID === doc.id) {
-              if (uid === doc.data().uid) {
-                this.like = true;
-              } else {
-                this.like = false;
-              }
+            if (this.movieID === doc.id && uid === doc.data().uid) {
               this.like = true;
             } else {
               this.like = false;
             }
-
           });
         }
       );

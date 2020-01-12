@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mock-netflix';
+  title = 'Mini-netflix';
 
   constructor(public router: Router, public route: ActivatedRoute) {}
 

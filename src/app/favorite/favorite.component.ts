@@ -43,7 +43,7 @@ export class FavoriteComponent implements OnInit {
   }
 
   displayFavorites() {
-    console.log(this.liked.length === 0);
+    // console.log(this.liked.length === 0);
     if (this.liked.length === 0) {
       this.favoriteMovies = false;
     } else {
